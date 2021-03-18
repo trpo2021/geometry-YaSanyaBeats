@@ -64,4 +64,8 @@ int main()
     }
 
     printFigures(figures);
+
+    system("PAUSE");
+    
+    return 1;
 }

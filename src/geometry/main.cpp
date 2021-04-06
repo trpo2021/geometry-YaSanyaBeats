@@ -4,8 +4,8 @@
 #include <set>
 #include <cmath>
 
-#include "input.h"
-#include "calculate.h"
+#include "../libinput/input.h"
+#include "../libcalculate/calculate.h"
 
 using namespace std;
 

@@ -1,16 +1,24 @@
-all: main
+CXX=g++
+CFLAGS= -c -Wall -Werror
+LIBI = obj/src/libinput
+LIBC = obj/src/libcalculate
+GEO = obj/src/geometry
 
-main: main.o input.o calculate.o
-	g++ main.o input.o calculate.o -o geometry.exe
+bin/geometry.exe: $(GEO)/main.o $(LIBC)/calculate.o $(LIBI)/input.o 
+		$(CXX) -I src -Wall -Werror -o bin/geometry.exe $(GEO)/main.o $(LIBC)/calculate.o $(LIBI)/input.o
 
-main.o: main.cpp
-	g++ -c main.cpp
+$(LIBC)/calculate.o: src/libcalculate/calculate.cpp
+		$(CXX) -I src $(CFLAGS) -MMD -o $(LIBC)/calculate.o src/libcalculate/calculate.cpp
 
-input.o: input.cpp
-	g++ -c input.cpp
+$(LIBI)/input.o: src/libinput/input.cpp
+		$(CXX) -I src $(CFLAGS) -MMD -o $(LIBI)/input.o src/libinput/input.cpp
 
-calculate.o: calculate.cpp
-	g++ -c calculate.cpp
+$(GEO)/main.o: src/geometry/main.cpp
+		$(CXX) -I src $(CFLAGS) -MMD -o $(GEO)/main.o src/geometry/main.cpp
 
-clean:
-	rm -rf *.o main
+-include main.d input.d calculate.d
+
+.PHONY: clean
+
+clean: 
+	rm -rf $(GEO)/*.o $(GEO)/*.d $(LIBC)/*.o $(LIBC)/*.d $(LIBI)/*.o $(LIBI)/*.d bin/*.exe

@@ -1,9 +1,7 @@
 #include <vector>
 #include <string>
 
-using namespace std;
-
-bool checkInput(string s);
-string takeFigureName(string s);
-string takePointsString(string figureName, string s);
-vector<double> takePoints(string s);
+bool checkInput(std::string s);
+std::string takeFigureName(std::string s);
+std::string takePointsString(std::string figureName, std::string s);
+std::vector<double> takePoints(std::string s);

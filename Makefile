@@ -16,9 +16,10 @@ $(LIBI)/input.o: src/libinput/input.cpp
 $(GEO)/main.o: src/geometry/main.cpp
 		$(CXX) -I src $(CFLAGS) -MMD -o $(GEO)/main.o src/geometry/main.cpp
 
--include main.d input.d calculate.d
-
 .PHONY: clean
 
 clean: 
 	rm -rf $(GEO)/*.o $(GEO)/*.d $(LIBC)/*.o $(LIBC)/*.d $(LIBI)/*.o $(LIBI)/*.d bin/*.exe
+
+-include main.d input.d calculate.d
+

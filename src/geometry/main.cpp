@@ -1,11 +1,11 @@
-﻿#include <iostream>
-#include <vector>
-#include <string>
+﻿#include <cmath>
+#include <iostream>
 #include <set>
-#include <cmath>
+#include <string>
+#include <vector>
 
-#include <libinput/input.h>
 #include <libcalculate/calculate.h>
+#include <libinput/input.h>
 
 using namespace std;
 
@@ -17,7 +17,8 @@ struct figure {
     vector<figure> interscapes;
 };
 
-void addNewFigure(vector<figure>& figures, string s) {
+void addNewFigure(vector<figure>& figures, string s)
+{
     figure tmp;
     tmp.name = takeFigureName(s);
 
@@ -29,9 +30,8 @@ void addNewFigure(vector<figure>& figures, string s) {
     figures.push_back(tmp);
 }
 
-
-void printFigures(vector<figure> figures) {
-    
+void printFigures(vector<figure> figures)
+{
     for (int i = 0; i < (int)figures.size(); i++) {
         cout << i + 1 << ". " << figures[i].name << ": ";
         for (int j = 0; j < (int)figures[i].points.size(); j++) {
@@ -43,7 +43,6 @@ void printFigures(vector<figure> figures) {
         cout << endl;
     }
 }
-
 
 int main()
 {
@@ -66,6 +65,6 @@ int main()
     printFigures(figures);
 
     system("PAUSE");
-    
+
     return 1;
 }

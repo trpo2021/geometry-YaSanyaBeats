@@ -4,10 +4,10 @@
 #include <string>
 #include <vector>
 
-#include <libcalculate/calculate.h>
-#include <libinput/input.h>
 #include <geometry/struct.h>
 #include <geometry/structFunctions.h>
+#include <libcalculate/calculate.h>
+#include <libinput/input.h>
 
 using namespace std;
 

@@ -2,9 +2,9 @@
 #include <string>
 #include <vector>
 
+#include <geometry/struct.h>
 #include <libcalculate/calculate.h>
 #include <libinput/input.h>
-#include <geometry/struct.h>
 
 using namespace std;
 

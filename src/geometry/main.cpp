@@ -29,6 +29,7 @@ int main()
         }
     }
 
+    calculateInterscapes(figures);
     printFigures(figures);
 
     system("PAUSE");

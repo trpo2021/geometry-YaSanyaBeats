@@ -15,5 +15,8 @@ jobs:
       - name: Build application
         run: make
 
+      - run: |
+          ls ${{ github.workspace }}
+
       - name: Unit tests
         run: make test && bin/test.exe

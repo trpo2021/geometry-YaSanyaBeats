@@ -51,7 +51,7 @@ TEST_CASE("Perimetr and square", "")
         std::vector<double> c{0, 0, 0, 5, 5, 5, 5, 0, 0, 0};
         CHECK(takePerimetr("triangle", a) == Approx(17.071));
         CHECK(takePerimetr("circle", b) == Approx(31.4159));
-        CHECK(takePerimetr("poligon", c) == 25);
+        CHECK(takePerimetr("poligon", c) == 20);
     }
     SECTION("square")
     {

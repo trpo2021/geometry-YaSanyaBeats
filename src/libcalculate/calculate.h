@@ -16,7 +16,8 @@ bool isIntersectionSections(
         double start2y,
         double end2x,
         double end2y);
-bool isIntersectionTwoCircles(std::vector<double> circle1, std::vector<double> circle2);
+bool isIntersectionTwoCircles(
+        std::vector<double> circle1, std::vector<double> circle2);
 bool isIntersectionCirclePoligon(
         std::vector<double> poligon, std::vector<double> circle);
 bool isIntersectionTwoPoligones(

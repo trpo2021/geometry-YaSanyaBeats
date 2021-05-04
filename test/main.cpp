@@ -6,7 +6,8 @@
 #include <string>
 #include <vector>
 
-TEST_CASE("Input functions", ""){
+TEST_CASE("Input functions", "")
+{
     SECTION("figure name")
     {
         std::string a = "triangle((0 0, 0 5, 5 5, 0 0))";
@@ -72,12 +73,24 @@ TEST_CASE("Intersections", "")
         std::vector<double> b{0, 5, 5, 0};
         std::vector<double> c{3, 0, 7, 4};
         std::vector<double> d{1, 3, 7, 3};
-        CHECK(isIntersectionSections(a[0], a[1], a[2], a[3], b[0], b[1], b[2], b[3]) == true);
-        CHECK(isIntersectionSections(a[0], a[1], a[2], a[3], c[0], c[1], c[2], c[3]) == false);
-        CHECK(isIntersectionSections(a[0], a[1], a[2], a[3], d[0], d[1], d[2], d[3]) == true);
-        CHECK(isIntersectionSections(b[0], b[1], b[2], b[3], b[0], d[1], d[2], d[3]) == true);
-        CHECK(isIntersectionSections(c[0], c[1], c[2], c[3], d[0], d[1], d[2], d[3]) == true);
-        CHECK(isIntersectionSections(d[0], d[1], d[2], d[3], c[0], c[1], c[2], c[3]) == true);
+        CHECK(isIntersectionSections(
+                      a[0], a[1], a[2], a[3], b[0], b[1], b[2], b[3])
+              == true);
+        CHECK(isIntersectionSections(
+                      a[0], a[1], a[2], a[3], c[0], c[1], c[2], c[3])
+              == false);
+        CHECK(isIntersectionSections(
+                      a[0], a[1], a[2], a[3], d[0], d[1], d[2], d[3])
+              == true);
+        CHECK(isIntersectionSections(
+                      b[0], b[1], b[2], b[3], b[0], d[1], d[2], d[3])
+              == true);
+        CHECK(isIntersectionSections(
+                      c[0], c[1], c[2], c[3], d[0], d[1], d[2], d[3])
+              == true);
+        CHECK(isIntersectionSections(
+                      d[0], d[1], d[2], d[3], c[0], c[1], c[2], c[3])
+              == true);
     }
     SECTION("two circles")
     {
@@ -107,8 +120,6 @@ TEST_CASE("Intersections", "")
         CHECK(isIntersectionCirclePoligon(ap, ac) == true);
         CHECK(isIntersectionCirclePoligon(bp, bc) == false);
     }
-    
+
     system("PAUSE");
 }
-
-
